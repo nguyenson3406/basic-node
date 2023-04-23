@@ -1,39 +1,56 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1, initial-scale=1.0">
-    <title>Card</title>
-    <link rel="stylesheet" href="css/card.css">
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.JS Basic</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+
 <body>
-<div class="card">
-    <span class="like"><i class='bx bx-heart'></i></span>
-    <span class="cart"><i class='bx bx-cart-alt' ></i></span>
-    <div class="img_card">
-        <img src="image/Nike Zoom KD 12.png" alt="">
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/card">Card</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
     </div>
-    <h2 class="title_card">Nike Zoom KD 12</h2>
-    <p class="price_card">$99</p>
-    <div class="size_card">
-        <h3>Size:</h3>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
+
+    <div>
+
+        <div class="w3-container">
+            <h2>List users Table</h2>
+
+            <table class="w3-table-all w3-hoverable">
+                <thead>
+                    <tr class="w3-light-grey">
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0; i<dataUser.length; i++){ %>
+                        <tr>
+                            <td><%=dataUser[i].id %></td>
+                            <td><%=dataUser[i].fistName %></td>
+                            <td><%=dataUser[i].lastName %></td>
+                            <td>
+                                <a href="/detail/<%=dataUser[i].id %>" target="_blank">Detail</a>
+                                <button type="button">Edit</button>
+                                <button type="button">Delete</button>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+
+
+            </table>
+        </div>
     </div>
-    <div class="color_card">
-        <h3>Color:</h3>
-        <span class="green"></span>
-		<span class="red"></span>
-		<span class="black"></span>
-    </div>
-    <div class="action_card">
-        <button>Buy now</button>
-        <button>Add cart</button>
-    </div>
-</div>
+
 </body>
+
 </html>
