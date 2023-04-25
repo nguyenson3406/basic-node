@@ -39,8 +39,14 @@
                             <td><%=dataUser[i].lastName %></td>
                             <td>
                                 <a href="/detail/<%=dataUser[i].id %>" target="_blank">Detail</a>
-                                <button type="button">Edit</button>
-                                <button type="button">Delete</button>
+                                <form class="btn-list" action="/update-user/<%= dataUser[i].id %>" method="GET">
+                                    <button type="submit">Edit</button>
+                                </form>
+
+                                <form class="btn-list" action="/delete/<%= dataUser[i].id %>" method="POST">
+                                    <input type="text" value="1" hidden>
+                                    <button type="submit">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     <% } %>
@@ -48,6 +54,28 @@
 
 
             </table>
+        </div>
+        <div class="create-user-content">
+            <b>Create a new user:</b>
+            <form action="/create-new-user" method="POST">
+                <div>
+                    <label>Frist name:</label><br>
+                    <input type="text" name="fristName"/>
+                </div>
+                <div>
+                    <label>Last name:</label><br>
+                    <input type="text" name="lastName"/>
+                </div>
+                <div>
+                    <label>Email:</label><br>
+                    <input type="email" name="email"/>
+                </div>
+                <div>
+                    <label>Address:</label><br>
+                    <input type="text" name="address"/>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
         </div>
     </div>
 

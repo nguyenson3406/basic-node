@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.JS Basic</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/card">Card</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <div>
+
+        <div class="create-user-content">
+            <b>Create a new user:</b>
+            <form action="/update-user-DB/<%= dataUser[0].id %>" method="POST">
+                <div>
+                    <label>Frist name:</label><br>
+                    <input type="text" name="fristName" value="<%= dataUser[0].fistName %>"/>
+                </div>
+                <div>
+                    <label>Last name:</label><br>
+                    <input type="text" name="lastName" value="<%= dataUser[0].lastName %>"/>
+                </div>
+                <div>
+                    <label>Email:</label><br>
+                    <input type="email" name="email" value="<%= dataUser[0].email %>"/>
+                </div>
+                <div>
+                    <label>Address:</label><br>
+                    <input type="text" name="address" value="<%= dataUser[0].address %>"/>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

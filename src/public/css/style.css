@@ -25,3 +25,16 @@ body {
     background-color: #04AA6D;
     color           : white;
 }
+
+.create-user-content{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.submit-btn{
+    margin-top: 5px;
+}
+
+.btn-list{
+    display: inline;
+}
